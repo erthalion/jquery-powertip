@@ -1,0 +1,27 @@
+{
+  "name": "jquery-powertip-build",
+  "version": "1.2.0",
+  "homepage": "https://github.com/erthalion/jquery-powertip",
+  "authors": [
+    "erthalion <9erthalion6@gmail.com>"
+  ],
+  "description": "A fork of jquery-powertip",
+  "license": "MIT",
+  "main": [
+    "dist/jquery.powertip.js",
+    "dist/css/jquery.powertip.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "css",
+    "doc",
+    "examples",
+    "src",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}
