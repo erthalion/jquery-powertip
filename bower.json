@@ -16,13 +16,7 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "css/",
-    "doc/",
-    "examples/",
-    "src/",
-    "Gruntfile.js",
-    "package.json"
+    "tests"
   ],
   "dependencies": {
     "jquery": ">= 1.7"
