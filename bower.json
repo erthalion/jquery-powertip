@@ -23,5 +23,8 @@
     "src",
     "Gruntfile.js",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7"
+  }
 }
