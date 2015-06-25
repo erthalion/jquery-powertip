@@ -809,6 +809,10 @@
 		function showTip(element) {
 			var tipContent;
 
+			if (!element) {
+				return;
+			}
+
 			// it is possible, especially with keyboard navigation, to move on to
 			// another element with a tooltip during the queue to get to this point
 			// in the code. if that happens then we need to not proceed or we may
@@ -919,6 +923,10 @@
 		 * @param {jQuery} element The element that the tooltip should target.
 		 */
 		function hideTip(element) {
+			if (!element) {
+				return;
+			}
+
 			// reset session
 			session.isClosing = true;
 			session.isTipOpen = false;
@@ -1114,7 +1122,7 @@
 			// result in a desynced tooltip because the tooltip was never asked to
 			// close. So we should periodically check for a desync situation and
 			// close the tip if such a situation arises.
-			if (session.isTipOpen && !session.isClosing && !session.delayInProgress && ($.inArray('mouseleave', options.closeEvents) > -1 || $.inArray('mouseout', options.closeEvents) > -1 || $.inArray('blur', options.closeEvents) > -1 || $.inArray('focusout', options.closeEvents) > -1)) {
+			if (session.isTipOpen && !session.isClosing && session.activeHover && !session.delayInProgress && ($.inArray('mouseleave', options.closeEvents) > -1 || $.inArray('mouseout', options.closeEvents) > -1 || $.inArray('blur', options.closeEvents) > -1 || $.inArray('focusout', options.closeEvents) > -1)) {
 				// user moused onto another tip or active hover is disabled
 				if (session.activeHover.data(DATA_HASACTIVEHOVER) === false || session.activeHover.is(':disabled')) {
 					isDesynced = true;
