@@ -1,5 +1,5 @@
 /*!
- PowerTip v1.2.0 (2015-06-25)
+ PowerTip v1.2.0 (2015-07-02)
  http://stevenbenner.github.io/jquery-powertip/
  Copyright (c) 2015 Steven Benner (http://stevenbenner.com/).
  Released under MIT license.
@@ -946,6 +946,10 @@
 
 			// fade out
 			tipElement.fadeOut(options.fadeOutTime, function fadeOutCallback() {
+				if (session.isTipOpen) {
+					return;
+				}
+
 				var coords = new CSSCoordinates();
 
 				// reset session and tooltip element
